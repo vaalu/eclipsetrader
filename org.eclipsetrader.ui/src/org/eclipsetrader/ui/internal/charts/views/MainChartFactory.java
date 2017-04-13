@@ -11,8 +11,6 @@
 
 package org.eclipsetrader.ui.internal.charts.views;
 
-import javax.swing.JOptionPane;
-
 import org.eclipse.swt.graphics.RGB;
 import org.eclipsetrader.core.charts.IDataSeries;
 import org.eclipsetrader.core.charts.OHLCDataSeries;
@@ -24,8 +22,6 @@ import org.eclipsetrader.ui.charts.IChartObject;
 import org.eclipsetrader.ui.charts.IChartObjectFactory;
 import org.eclipsetrader.ui.charts.IChartParameters;
 import org.eclipsetrader.ui.charts.OHLCField;
-import org.eclipsetrader.ui.charts.OHLCLineChart;
-import org.eclipsetrader.ui.charts.OHLCLineChart.LineStyle;
 
 public class MainChartFactory implements IChartObjectFactory {
 
@@ -187,7 +183,7 @@ public class MainChartFactory implements IChartObjectFactory {
      */
     @Override
     public void setParameters(IChartParameters parameters) {
-        style = parameters.hasParameter("style") ? MainRenderStyle.getStyleFromName(parameters.getString("style")) : MainRenderStyle.Bars;
+        style = parameters.hasParameter("style") ? MainRenderStyle.getStyleFromName(parameters.getString("style")) : MainRenderStyle.Candles;//MainRenderStyle.Bars;
 
         lineColor = parameters.getColor("line-color");
 

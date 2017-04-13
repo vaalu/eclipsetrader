@@ -9,7 +9,6 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.core.expressions,
  org.eclipse.core.databinding,
  org.eclipse.core.databinding.beans,
- org.eclipse.core.databinding.observable,
  org.eclipse.core.databinding.property,
  org.eclipse.ui,
  org.eclipse.ui.forms,
@@ -17,7 +16,8 @@ Require-Bundle: org.eclipse.core.runtime,
  org.eclipse.nebula.widgets.cdatetime,
  org.eclipse.nebula.widgets.pshelf,
  org.eclipse.nebula.jface.cdatetime,
- org.eclipsetrader.core
+ org.eclipsetrader.core,
+ com.tictactec.ta.lib
 Bundle-ActivationPolicy: lazy
 Export-Package: org.eclipsetrader.ui,
  org.eclipsetrader.ui.charts,
@@ -30,15 +30,20 @@ Export-Package: org.eclipsetrader.ui,
  org.eclipsetrader.ui.internal.handlers;x-internal:=true,
  org.eclipsetrader.ui.internal.markets;x-internal:=true,
  org.eclipsetrader.ui.internal.navigator;x-internal:=true,
- org.eclipsetrader.ui.internal.nifty50.explorer,
  org.eclipsetrader.ui.internal.preferences;x-internal:=true,
  org.eclipsetrader.ui.internal.providers;x-internal:=true,
  org.eclipsetrader.ui.internal.repositories;x-internal:=true,
  org.eclipsetrader.ui.internal.securities;x-internal:=true,
  org.eclipsetrader.ui.internal.securities.properties;x-internal:=true,
  org.eclipsetrader.ui.internal.securities.wizards;x-internal:=true,
+ org.eclipsetrader.ui.internal.signalpanel,
  org.eclipsetrader.ui.internal.views;x-internal:=true,
  org.eclipsetrader.ui.navigator
 Bundle-Localization: plugin
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Eclipse-BuddyPolicy: global
+Bundle-ClassPath: .,
+ hamcrest-core-1.3.jar,
+ in.jeani.nifty.jar,
+ junit-4.12.jar,
+ opencsv-2.3.jar

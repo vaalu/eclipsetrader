@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         name="Google Finance"
+         point="org.eclipsetrader.core.connectors">
+      <connector
+            class="org.eclipsetrader.google.internal.core.connector.FeedConnector"
+            id="org.eclipsetrader.google"
+            name="Google Finance">
+      </connector>
+      <backfill
+            class="org.eclipsetrader.google.internal.core.connector.BackfillConnector"
+            id="org.eclipsetrader.google"
+            name="Google Finance">
+      </backfill>
+      <property
+            id="org.eclipsetrader.google.symbol"
+            name="Symbol">
+      </property>
+   </extension>
+   <extension
+         point="org.eclipse.ui.preferencePages">
+      <page
+            category="org.eclipsetrader.ui.preferences.plugins"
+            class="org.eclipsetrader.google.internal.ui.preferences.AuthenticationPage"
+            id="org.eclipsetrader.google.general"
+            name="Google Finance">
+      </page>
+      <page
+            category="org.eclipsetrader.ui.preferences.news"
+            class="org.eclipsetrader.google.internal.ui.preferences.NewsPreferencesPage"
+            id="org.eclipsetrader.google.news"
+            name="Google Finance">
+      </page>
+   </extension>
+   <extension
+         point="org.eclipse.ui.importWizards">
+      <wizard
+            category="org.eclipsetrader.ui.import.data"
+            class="org.eclipsetrader.google.internal.ui.wizards.DataImportWizard"
+            icon="Google-Finance-icon-16.png"
+            id="org.eclipsetrader.google.data"
+            name="Google Finance">
+         <description>
+            Import historical data from Google Finance.
+         </description>
+      </wizard>
+   </extension>
+   <extension
+         point="org.eclipsetrader.news.providers">
+      <provider
+            class="org.eclipsetrader.google.internal.news.NewsProviderFactory"
+            id="org.eclipsetrader.news.google"
+            name="Google Finance">
+      </provider>
+   </extension>
+   <extension
+         point="org.eclipsetrader.core.providers">
+      <provider
+            class="org.eclipsetrader.google.internal.ui.FeedIdentifierFactory"
+            id="org.eclipsetrader.google.providers.symbol"
+            name="Google Symbol">
+      </provider>
+   </extension>
+
+</plugin>

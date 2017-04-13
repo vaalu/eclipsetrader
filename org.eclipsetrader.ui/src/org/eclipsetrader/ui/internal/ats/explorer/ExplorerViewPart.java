@@ -82,7 +82,7 @@ public class ExplorerViewPart extends ViewPart {
     private Action expandAllAction;
     private Action deleteAction;
     private Action removeAction;
-
+    
     public ExplorerViewPart() {
     }
 
@@ -151,7 +151,8 @@ public class ExplorerViewPart extends ViewPart {
         removeAction.setImageDescriptor(imageRegistry.getDescriptor(UIActivator.IMG_REMOVE_ICON));
         removeAction.setDisabledImageDescriptor(imageRegistry.getDescriptor(UIActivator.IMG_REMOVE_DISABLED_ICON));
         removeAction.setEnabled(false);
-
+        
+        
         IToolBarManager toolBarManager = site.getActionBars().getToolBarManager();
         toolBarManager.add(expandAllAction);
         toolBarManager.add(collapseAllAction);

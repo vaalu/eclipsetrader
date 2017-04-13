@@ -35,8 +35,8 @@ public class CandleStickChart implements IChartObject, ISummaryBarDecorator, IAd
 
     private int width = 5;
     private RGB outlineColor = new RGB(0, 0, 0);
-    private RGB positiveColor = new RGB(254, 254, 254);
-    private RGB negativeColor = new RGB(0, 0, 0);
+    private RGB positiveColor = new RGB(0, 255, 0);
+    private RGB negativeColor = new RGB(255, 0, 0);
 
     private IAdaptable[] values;
     private List<Candle> pointArray;

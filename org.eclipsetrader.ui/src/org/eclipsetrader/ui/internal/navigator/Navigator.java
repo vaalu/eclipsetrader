@@ -40,6 +40,8 @@ import org.eclipse.jface.viewers.SelectionChangedEvent;
 import org.eclipse.jface.viewers.TreeViewer;
 import org.eclipse.jface.viewers.Viewer;
 import org.eclipse.jface.viewers.ViewerSorter;
+import org.eclipse.jface.window.Window;
+import org.eclipse.jface.wizard.WizardDialog;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.dnd.DND;
 import org.eclipse.swt.dnd.DragSource;
@@ -68,6 +70,7 @@ import org.eclipsetrader.ui.SelectionProvider;
 import org.eclipsetrader.ui.UIConstants;
 import org.eclipsetrader.ui.internal.UIActivator;
 import org.eclipsetrader.ui.internal.repositories.Messages;
+import org.eclipsetrader.ui.internal.securities.wizards.nifty50.Nifty50SecuritiesWizard;
 import org.eclipsetrader.ui.navigator.INavigatorContentGroup;
 import org.eclipsetrader.ui.navigator.SecurityObjectTransfer;
 
@@ -81,7 +84,8 @@ public class Navigator extends ViewPart {
     private Action expandAllAction;
 
     private Action deleteAction;
-
+    private Action nifty50Action;
+    
     public Navigator() {
     }
 
@@ -113,6 +117,24 @@ public class Navigator extends ViewPart {
             }
         };
 
+        nifty50Action = new Action("Nifty50") {
+        	@Override
+        	public void run() {
+        		Nifty50SecuritiesWizard securitiesWiz = new Nifty50SecuritiesWizard();
+				WizardDialog dialog = new WizardDialog(getViewSite().getShell(), securitiesWiz);
+				if (dialog.open() == Window.OK) {
+					System.out.println("Ok pressed");
+					nifty50Action.setEnabled(securitiesWiz.isActionEnabled());
+					expandAllAction.run();
+				} else {
+					System.out.println("Cancel pressed");
+				}
+        	}
+        };
+        nifty50Action.setImageDescriptor(imageRegistry.getDescriptor(UIActivator.IMG_NIFTY50_SECURITIES));
+        nifty50Action.setDisabledImageDescriptor(imageRegistry.getDescriptor(UIActivator.IMG_NIFTY50_SECURITIES));
+        nifty50Action.setEnabled(true);
+        
         deleteAction = new Action("Delete") {
 
             @Override
@@ -128,6 +150,7 @@ public class Navigator extends ViewPart {
                         @Override
                         public IStatus run(IProgressMonitor monitor) throws Exception {
                             service.deleteAdaptable(objects);
+                            nifty50Action.setEnabled(true);
                             return Status.OK_STATUS;
                         }
                     }, null);
@@ -141,6 +164,7 @@ public class Navigator extends ViewPart {
         deleteAction.setEnabled(false);
 
         IToolBarManager toolBarManager = site.getActionBars().getToolBarManager();
+        toolBarManager.add(nifty50Action);
         toolBarManager.add(expandAllAction);
         toolBarManager.add(collapseAllAction);
 

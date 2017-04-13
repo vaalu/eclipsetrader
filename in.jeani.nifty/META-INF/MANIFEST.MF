@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Nifty
+Bundle-SymbolicName: in.jeani.nifty;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: hamcrest-core-1.3.jar,
+ junit-4.12.jar,
+ opencsv-2.3.jar
+Built-By: mohanavelp
+Build-Jdk: JavaSE-1.6
+Class-Path: hamcrest-core-1.3.jar junit-4.12.jar opencsv-2.3.jar
+Export-Package: in.jeani.n50.exceptions,
+ in.jeani.n50.utils,
+ in.jeani.n50.utils.bo
+Bundle-Vendor: in.jeani

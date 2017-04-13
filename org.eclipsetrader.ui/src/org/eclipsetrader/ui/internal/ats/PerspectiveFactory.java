@@ -70,6 +70,7 @@ public class PerspectiveFactory implements IPerspectiveFactory {
         layout.addNewWizardShortcut("org.eclipsetrader.ui.wizard.script");//$NON-NLS-1$
         layout.addNewWizardShortcut("org.eclipsetrader.ui.wizards.new.stock");//$NON-NLS-1$
         layout.addNewWizardShortcut("org.eclipsetrader.ui.wizards.new.currency");//$NON-NLS-1$
+        layout.addNewWizardShortcut("org.eclipsetrader.ui.wizards.new.nifty50.securities");//$NON-NLS-1$
 
         // Add "actionsets".
         layout.addActionSet("org.eclipsetrader.ui.launcher");

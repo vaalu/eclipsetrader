@@ -92,6 +92,7 @@ public class UIActivator extends AbstractUIPlugin {
     public static final String IMG_DELETE_ICON = "delete";
     public static final String IMG_DELETE_DISABLED_ICON = "delete-disabled";
     public static final String IMG_TRADING_SYSTEM = "trading-system";
+    public static final String IMG_NIFTY50_SECURITIES = "nifty50-securities";
 
     public static final String K_VIEWS_SECTION = "Views";
     public static final String K_URI = "uri";
@@ -231,6 +232,7 @@ public class UIActivator extends AbstractUIPlugin {
         reg.put(IMG_DELETE_ICON, ImageDescriptor.createFromURL(getBundle().getResource("icons/etool16/delete.gif")));
         reg.put(IMG_DELETE_DISABLED_ICON, ImageDescriptor.createFromURL(getBundle().getResource("icons/dtool16/delete.gif")));
         reg.put(IMG_TRADING_SYSTEM, ImageDescriptor.createFromURL(getBundle().getResource("icons/obj16/cog.png")));
+        reg.put(IMG_NIFTY50_SECURITIES, ImageDescriptor.createFromURL(getBundle().getResource("icons/eview16/N5016x16.png")));
     }
 
     public IRepositoryService getRepositoryService() {

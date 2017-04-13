@@ -307,9 +307,9 @@ public class DataImportJob extends Job {
             monitor.done();
         }
 
-        if (results.size() != 0) {
+        /*if (results.size() != 0) {
             return new MultiStatus(UIActivator.PLUGIN_ID, 0, results.toArray(new IStatus[results.size()]), Messages.DataImportJob_DownloadErrorMessage, null);
-        }
+        }*/
         return Status.OK_STATUS;
     }
 

@@ -84,6 +84,13 @@
       </view>
       <view
             category="org.eclipsetrader.ui"
+            class="org.eclipsetrader.ui.internal.signalpanel.SignalPanel"
+            icon="icons/signals/signals_bgx_16x.png"
+            id="org.eclipsetrader.ui.views.signalpanel"
+            name="%tradeMomentum">
+      </view>
+      <view
+            category="org.eclipsetrader.ui"
             class="org.eclipsetrader.ui.internal.markets.MarketsView"
             icon="icons/eview16/markets.png"
             id="org.eclipsetrader.ui.views.markets"
@@ -165,14 +172,6 @@
             icon="icons/eview16/cog.png"
             id="org.eclipsetrader.ui.ats.views.explorer"
             name="Strategy Explorer"
-            restorable="true">
-      </view>
-      <view
-            category="org.eclipsetrader.ui.ats"
-            class="org.eclipsetrader.ui.internal.nifty50.explorer.Nifty50ExplorerViewPart"
-            icon="icons/eview16/N5016x16.png"
-            id="org.eclipsetrader.ui.internal.nifty50.explorer"
-            name="Nifty50 Explorer"
             restorable="true">
       </view>
       <view

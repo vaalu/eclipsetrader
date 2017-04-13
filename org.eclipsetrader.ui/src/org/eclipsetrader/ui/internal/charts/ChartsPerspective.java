@@ -43,11 +43,15 @@ public class ChartsPerspective implements IPerspectiveFactory {
         editorsFolder.addPlaceholder(HistoryDataEditorPart.VIEW_ID + ":*");
 
         // Left.
-        IFolderLayout left = layout.createFolder("left", IPageLayout.LEFT, (float) 0.20, UIConstants.EDITOR_AREA); //$NON-NLS-1$ 
+        IFolderLayout left = layout.createFolder("left", IPageLayout.RIGHT, (float) 0.20, UIConstants.EDITOR_AREA); //$NON-NLS-1$ 
         left.addView("org.eclipsetrader.ui.views.navigator"); //$NON-NLS-1$
         left.addPlaceholder("org.eclipsetrader.ui.views.repositories"); //$NON-NLS-1$
         layout.addView("org.eclipsetrader.ui.charts.palette", IPageLayout.BOTTOM, (float) 0.50, "left"); //$NON-NLS-1$ //$NON-NLS-2$
 
+        // Right.
+        IFolderLayout right = layout.createFolder("right", IPageLayout.RIGHT, (float) 0.20, UIConstants.EDITOR_AREA); //$NON-NLS-1$ 
+        right.addView("org.eclipsetrader.ui.views.signalpanel"); //$NON-NLS-1$
+        
         // Bottom
         IPlaceholderFolderLayout bottom = layout.createPlaceholderFolder("bottom", IPageLayout.BOTTOM, (float) 0.75, UIConstants.EDITOR_AREA); //$NON-NLS-1$ 
         bottom.addPlaceholder("org.eclipse.ui.views.ProgressView"); //$NON-NLS-1$
